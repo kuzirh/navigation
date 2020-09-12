@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
