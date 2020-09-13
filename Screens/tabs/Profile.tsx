@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text, Button } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ScreenContainer } from '../ScreenContainer';
+import { AuthContext } from '../../context';
 
 type NavigationStackParamList = {
   Details: undefined;
@@ -20,6 +21,7 @@ type Props = {
 };
 
 export const Profile = ({ navigation }: Props) => {
+  const { signOut } = useContext(AuthContext);
   return (
     <ScreenContainer>
       <Text>Look at that pretty face</Text>
@@ -33,6 +35,7 @@ export const Profile = ({ navigation }: Props) => {
           });
         }}
       />
+      <Button title='Sign Out' onPress={() => signOut()} />
     </ScreenContainer>
   );
 };
